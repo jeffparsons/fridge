@@ -1,2 +1,1 @@
 web: target/start Web
-
