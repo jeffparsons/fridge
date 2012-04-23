@@ -1,7 +1,8 @@
 package com.dz.fridge.bootstrap
 
-import unfiltered.request._
-import unfiltered.response._
+import unfiltered.request.Path
+import unfiltered.response.ResponseString
+import scala.util.Properties
 
 object UnfilteredMain {
 
@@ -11,7 +12,9 @@ object UnfilteredMain {
             case Path("/") => ResponseString("Testing")
         }
         
-        unfiltered.netty.Http(8080)
+        val port = Properties.envOrElse("PORT", "8080").toInt
+        
+        unfiltered.netty.Http(port)
         	.plan(hello)
         	.resources(getClass().getResource("/public/"), 40, passOnFail = false)
         	.run()
