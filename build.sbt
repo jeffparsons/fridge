@@ -10,9 +10,11 @@ scalaVersion := "2.9.1"
 
 resolvers += "twitter-repo" at "http://maven.twttr.com"
 
-libraryDependencies += "com.twitter" % "finagle-core" % "1.9.10"
+//resolvers += "repo-releases" at "http://scala-tools.org"
 
-libraryDependencies += "com.twitter" % "finagle-http" % "1.9.10"
+//libraryDependencies += "com.twitter" % "finagle-core" % "1.9.10"
+
+//libraryDependencies += "com.twitter" % "finagle-http" % "1.9.10"
 
 libraryDependencies += "net.databinder" %% "unfiltered-netty" % "0.6.1" withSources()
 
@@ -21,3 +23,5 @@ libraryDependencies += "net.databinder" %% "unfiltered-netty-server" % "0.6.1" w
 libraryDependencies += "net.databinder" %% "unfiltered-filter" % "0.6.1" withSources()
 
 mainClass := Some("com.dz.fridge.bootstrap.UnfilteredMain")
+
+libraryDependencies += "com.mongodb.casbah" %% "casbah" % "2.1.5-1"
