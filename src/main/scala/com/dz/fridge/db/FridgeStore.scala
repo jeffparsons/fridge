@@ -2,14 +2,13 @@ package com.dz.fridge.db
 
 import java.net.URI
 import com.mongodb.casbah.MongoConnection
+import com.mongodb.Mongo
+import com.mongodb.casbah.MongoURI
 
 object FridgeStore {
 
-    val dbUri: URI = new URI(System.getenv("MONGOHQ_URL"))
-    //val MongoURI mongoURI = new MongoURI(System.getenv("MONGOHQ_URL"))
-
-    lazy val db: MongoConnection = new MongoConnection(dbUri)
-    
+    lazy val db: MongoConnection = MongoConnection(MongoURI(System.getenv("MONGOHQ_URL")))
+        
     //DB db = mongoURI.connectDB();
     //db.authenticate(mongoURI.getUsername(), mongoURI.getPassword());  
     //Set<String> colls = db.getCollectionNames();
