@@ -1,4 +1,4 @@
 # Fridge Readme
 
-Fridge represents a fridge and it's needs. I'm learning Scalal! :)
+Fridge represents a fridge and its needs. I'm learning Scala! :)
 
